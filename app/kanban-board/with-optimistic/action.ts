@@ -3,8 +3,8 @@
 import { revalidatePath } from "next/cache";
 
 export async function moveCard(prevState: number, to: number) {
-  console.log("moving card from", prevState, "to", to);
+  console.log("moving card from ", prevState, "to", to);
   await new Promise((resolve) => setTimeout(resolve, 1000));
-  revalidatePath("/kanban-board/with-optimistic");
+  revalidatePath("/kanban-board/without-optimistic");
   return to;
 }
